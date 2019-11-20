@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='game_Story_about_one_hero'
