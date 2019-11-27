@@ -12,84 +12,114 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="bottom|left"
-            android:orientation="vertical">
+        android:orientation="vertical">
 
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/health_pickup"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/moveLeft"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:textSize="34sp"
-                    android:text="@string/left"/>
-
-                <Button
-                    android:id="@+id/moveRight"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:text="@string/right"
-                    android:textSize="34sp" />
-            </LinearLayout>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="bottom|right"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/fireball"/>
-                <Button
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:textSize="34sp"
-                    android:text="@string/up"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/a_shield_kite_gold"/>
-                <ImageButton
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/sword_normal"/>
-            </LinearLayout>
-
-
+            android:gravity="right">
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:textSize="34sp"
+                android:text="@string/x"
+                android:id="@+id/exit"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|left"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:id="@+id/heal1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_pickup"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/moveLeft"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:textSize="34sp"
+                        android:text="@string/left"/>
+
+                    <Button
+                        android:id="@+id/moveRight"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:text="@string/right"
+                        android:textSize="34sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|right"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--<ImageButton
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fireball"/>
+                    <Button
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:textSize="34sp"
+                        android:text="@string/up"/>-->
+                    <ImageButton
+                        android:id="@+id/heal2"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_pickup"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:id="@+id/specialAttack"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sword_ii_2"/>
+                    <ImageButton
+                        android:id="@+id/attack"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sword_normal"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
+
+
 </RelativeLayout>

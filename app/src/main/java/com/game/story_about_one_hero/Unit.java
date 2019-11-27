@@ -3,64 +3,100 @@ package com.game.story_about_one_hero;
 import android.graphics.Bitmap;
 abstract public class Unit{
     private int
-            health, mane,
-            unitX, unitY,
-            speedMove, speedAttack,
-            attackRange, attackDamage,
-            widthUnit, heightUnit;
+            health;
+    private int mana;
+    private int maxHealth;
+    private int maxMana;
+    private int unitX;
+    private int unitY;
+    private int speedMove;
+    private int timeAnimAttack;
+
+    public void setBaseAttackDamage(int baseAttackDamage) {
+        this.baseAttackDamage = baseAttackDamage;
+    }
+
+    public void setBaseAttackRange(int baseAttackRange) {
+        this.baseAttackRange = baseAttackRange;
+    }
+
+    private int baseAttackDamage;
+    private int baseAttackRange;
+    private int attackRange;
+    private int attackDamage;
+    private int widthUnit;
+    private int heightUnit;
+    private int timeAnimMove;
+
+    private long prevTime, newTime;
 
     private boolean isMove;
 
+    private boolean isAttack;
+
     private boolean isRight;
+
+    private boolean isAlive = true;
+
+    private boolean isEnemy;
+    private boolean isHero;
 
     private Bitmap imageUnit;
 
     Unit(int health, int mane,
          int x, int y,
-         int speedMove, int speedAttack,
+         int speedMove, int timeAnimAttack,
          int attackRange, int attackDamage,
-         int width, int height, Bitmap imageUnit){
-        this.health = health;
-        this.mane = mane;
+         int width, int height, Bitmap imageUnit,
+         boolean isEnemy, boolean isHero,
+         int timeAnimMove){
+        this.maxHealth = this.health = health;
+        this.maxMana = this.mana = mane;
         this.unitX = x;
         this.unitY = y;
         this.speedMove = speedMove;
-        this.speedAttack = speedAttack;
-        this.attackRange = attackRange;
-        this.attackDamage = attackDamage;
+        this.timeAnimAttack = timeAnimAttack;
+        this.baseAttackRange = this.attackRange = attackRange;
+        this.baseAttackDamage = this.attackDamage = attackDamage;
         this.widthUnit = width;
         this.heightUnit = height;
         this.imageUnit = imageUnit;
+        this.isEnemy = isEnemy;
+        this.isHero = isHero;
+        this.timeAnimMove = timeAnimMove;
     }
 
     abstract void stop ();
     abstract void startMove(boolean isRight);
     abstract void takeDamage(int attackDamage);
     abstract void move(int minX, int maxX, int minY, int maxY);
-    abstract void attack(Unit unit);
+    abstract void startAttack(boolean isRight);
+    abstract void stopAttack();
+    abstract void attack();
+    abstract void die();
 
     public int getHealth() {
         return health;
-    }
-
-    public int getMane() {
-        return mane;
     }
 
     public void setHealth(int health) {
         this.health = health;
     }
 
-    public void setMane(int mane) {
-        this.mane = mane;
-    }
-
     public int getAttackDamage() {
         return attackDamage;
     }
 
+    public void setAttackDamage(int attackDamage){
+        this.attackDamage = attackDamage;
+    }
+
     public int getAttackRange() {
         return attackRange;
+    }
+
+    public void setAttackRange(int attackRange) {
+        this.attackRange = attackRange;
     }
 
     public int getSpeedMove() {
@@ -71,12 +107,12 @@ abstract public class Unit{
         this.speedMove = speedMove;
     }
 
-    public int getSpeedAttack() {
-        return speedAttack;
+    public int getTimeAnimAttack() {
+        return timeAnimAttack;
     }
 
-    public void setSpeedAttack(int speedAttack) {
-        this.speedAttack = speedAttack;
+    public void setTimeAnimAttack(int timeAnimAttack) {
+        this.timeAnimAttack = timeAnimAttack;
     }
 
     public Bitmap getImageUnit() {
@@ -133,5 +169,65 @@ abstract public class Unit{
 
     public void setRight(boolean right) {
         isRight = right;
+    }
+
+    public boolean isAttack() {
+        return isAttack;
+    }
+
+    public void setAttack(boolean attack) {
+        isAttack = attack;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public void setPrevTime(long prevTime) {
+        this.prevTime = prevTime;
+    }
+
+    public void setNewTime(long newTime) {
+        this.newTime = newTime;
+    }
+
+    public long getPrevTime() {
+        return prevTime;
+    }
+
+    public long getNewTime() {
+        return newTime;
+    }
+
+    public int getTimeAnimMove() {
+        return timeAnimMove;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public int getBaseAttackDamage() {
+        return baseAttackDamage;
+    }
+
+    public int getBaseAttackRange() {
+        return baseAttackRange;
     }
 }
