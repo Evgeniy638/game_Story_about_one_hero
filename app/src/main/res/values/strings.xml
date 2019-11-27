@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">game_Story_about_one_hero</string>
+    <string name="up">↑</string>
+    <string name="left">←</string>
+    <string name="right">→</string>
+    <string name="x">X</string>
 </resources>
